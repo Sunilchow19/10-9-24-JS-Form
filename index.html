@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        input{
+            display: block;
+            margin: 10px;
+        }
+        div{
+            height: 350px;
+            width: 350px;
+            border: 2px solid;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 35px;
+        }
+
+      
+    </style>
+</head>
+<body>  
+        <form action="" id="form_main">
+            <h2>Registration Form</h2>
+            <label for="user">Username:</label>
+            <input type="text" placeholder="Username" value="" id="user">
+            <label for="pass">Password:</label>
+            <input type="password" placeholder="Password" value="" id="pass">
+            <label for="conpass">Confirm-Password:</label>
+            <input type="password" placeholder="Confirm-Password" value="" id="passes">
+            <label for="email">Email:</label>
+            <input type="text" placeholder="Email" value="" id="email">
+            <label for="ph-no">Phone-No:</label>
+            <input type="text" placeholder="Phone-No" value="" id="ph-no">
+            <button id="main_btn">Submit</button>
+        </form>
+        <script>
+let frm=document.getElementById("form_main")
+            let btn=document.getElementById("main_btn");
+
+            // let arr=[]
+            //click event
+            btn.addEventListener("click",(e)=>{
+
+                e.preventDefault();
+
+                let div=document.createElement("div")
+
+                let heading=document.createElement("h2")
+                heading.innerHTML="<u>Registration Details</u>"
+
+                let user=document.getElementById("user")
+                let pass=document.getElementById("pass")
+                let con_pass=document.getElementById("passes")
+                let email=document.getElementById("email")
+                let ph_no=document.getElementById("ph-no")
+
+               
+                let d=document.createElement("h4");
+                d.innerText= user.value
+                let p=document.createElement("h4");
+                p.innerText= pass.value
+                 let cp=document.createElement("h4");
+                cp.innerText= con_pass.value
+                 let em=document.createElement("h4");
+                em.innerText= email.value 
+                let ph=document.createElement("h4");
+                ph.innerText= ph_no.value
+
+                let del=document.createElement("button");
+                del.innerHTML='<span class="material-symbols-outlined"> close </span>'
+              
+
+                del.addEventListener("click",()=>{
+                    div.remove()
+                    del.remove();
+                })
+
+
+                // let edit_btn=document.createElement("button");
+                // edit_btn.innerText="Edit details"
+                // edit_btn.addEventListener("click",()=>{
+                //         user_value=prompt("Enter Username");
+                //         d.innerText=user_value
+
+                //         pass_value=prompt("Enter password");
+                //         p.innerText=p_value
+
+                //         cp_value=prompt("Enter Confirm-password");
+                //         cp.innerText=cp_value
+
+                //         em_value=prompt("Enter email");
+                //         em.innerText=em_value
+                        
+                        
+                //         ph_value=prompt("Enter Phone-no");
+                //         ph.innerText=ph_value
+                // })
+
+                // console.log(user.value,pass.value,con_pass.value,email.value,ph_no.value);
+
+                // var obj={
+                //     username:user.value,
+                //     password:pass.value,
+                //     confirmPassword:con_pass.value,
+                //     email:email.value,
+                //     phoneNo:ph_no.value
+                // }
+
+                // arr.push(obj)
+
+                // let js=JSON.stringify(arr)
+
+                // localStorage.setItem("user",js)
+                // localStorage.getItem("user")
+                // window.location.assign("index.html");
+                
+
+                div.append(heading,d,p,cp,em,ph);
+                document.body.append(div,del)
+
+                user.value=""
+                pass.value=""
+                con_pass.value=""
+                email.value=""
+                ph_no.value=""
+
+                // frm.remove();
+            })
+
+        </script>
+</body>
+</html>
